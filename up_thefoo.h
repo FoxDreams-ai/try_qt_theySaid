@@ -26,7 +26,7 @@ private:
     int move_scaleing=1;
 protected:
     //<summary> Принимает координаты и перемещает окна последовательно размещая их с правой и левой сторон</summary>
-    void Move_Target(Dialog *window);
+    void Move_Target(Dialog *window , Frame *F);
 
 };
 

@@ -24,10 +24,23 @@ private:
     Dialog *window;
     bool is_even = 0;
     int move_scaleing=1;
+
+    int function_times_action = 7;
 protected:
     //<summary> Принимает координаты и перемещает окна последовательно размещая их с правой и левой сторон</summary>
     void Move_Target(Dialog *window , Frame *F);
 
+    void start_pos_init(){
+        start_w_pos = vertical_pos;
+        start_h_pos = horisontal_pos;
+
+    };
+
+    void Start_dialog_widgets(Dialog *window){
+        window->move(start_h_pos , start_w_pos);
+    }
+
+    }
 };
 
 #endif // UP_THEFOO_H

@@ -1,4 +1,5 @@
 #include <QThread>
+#include <QPropertyAnimation>
 #include "up_thefoo.h"
 #include "dialog.h"
 #include "frame.h"

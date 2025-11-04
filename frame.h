@@ -17,9 +17,10 @@ public:
     Frame(QWidget *parent = nullptr);
     ~Frame();
 
+
 private slots:
     void on_commandLinkButton_clicked();
-
+    void Frames_amount(bool l);
 private:
     Ui::Frame *ui;
 

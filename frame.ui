@@ -404,7 +404,122 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>48</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>557</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>587</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_3</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>683</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_5</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>676</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_6</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>665</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_7</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Frame</receiver>
+   <slot>Frames_amount(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>246</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>636</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>Frames_amount(bool)</slot>
+ </slots>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>
  </buttongroups>

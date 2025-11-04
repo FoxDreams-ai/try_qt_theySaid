@@ -23,23 +23,20 @@ void Up_theFoo::ScreenGet(Frame *F){
 }
 
 
-Dialog* Up_theFoo::Generate_7(Frame *F) {
-
-   // for(int i = 0;i<7;i++)
-    //{
+Dialog* Up_theFoo::Generate_7(Frame *F,int i) {
+    for(int j = 0;j<i;j++)
+    {
         Dialog *window = new Dialog(F);
         window->show();
         Start_dialog_widgets(window);
         QThread::sleep(1);
 
         Move_Target(window, F);
- //   }
+   }
     return window;
 }
 
 void Up_theFoo::Move_Target(Dialog *window, Frame *F){
-
-
         QPropertyAnimation *animation = new QPropertyAnimation(window, "pos");
 
 
@@ -62,9 +59,7 @@ void Up_theFoo::Move_Target(Dialog *window, Frame *F){
             is_even = !is_even;
             move_scaleing++;
         }
-    if(function_times_action > 1)
-        {
-            function_times_action --;
-            Generate_7(F);           }
-    else{}
+
+
+          //  Generate_7(F);
 }

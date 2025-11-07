@@ -1,4 +1,5 @@
 #include <QThread>
+#include <QTimer>
 #include <QPropertyAnimation>
 #include "up_thefoo.h"
 #include "dialog.h"
@@ -6,13 +7,13 @@
 
 Up_theFoo::Up_theFoo(QObject *parent)
     : QObject(parent),
-    Fra(nullptr),
+    //Fra(nullptr),
     window(nullptr)
 {
 }
 
 void Up_theFoo::ScreenGet(Frame *F){
-    Dialog *window  =new Dialog(F);
+    /*Dialog **/window  =new Dialog(F);
 
     QScreen *screen = QGuiApplication::primaryScreen();
     vertical_pos = (screen->size().height())/2;
@@ -20,6 +21,8 @@ void Up_theFoo::ScreenGet(Frame *F){
 
     horisontal_pos = (screen->size().width())/2;
     horisontal_pos -=(window->size().width())/2;
+
+    start_pos_init();
 }
 
 
@@ -29,25 +32,28 @@ Dialog* Up_theFoo::Generate_7(Frame *F,int i) {
         Dialog *window = new Dialog(F);
         window->show();
         Start_dialog_widgets(window);
-        QThread::sleep(1);
-
-        Move_Target(window, F);
-   }
+        // QTimer::singleShot(500, [ this, window , F]() {
+            Move_Target(window, F);
+        // });
+}
     return window;
 }
+
 
 void Up_theFoo::Move_Target(Dialog *window, Frame *F){
         QPropertyAnimation *animation = new QPropertyAnimation(window, "pos");
 
+    QScreen *screen = QGuiApplication::primaryScreen();
+    horisontal_pos = std::clamp(horisontal_pos, 0, screen->size().width() - window->width());
+    vertical_pos   = std::clamp(vertical_pos, 0, screen->size().height() - window->height());
 
-        animation->setDuration(500);
-        animation->setStartValue(window->pos());
+        animation->setDuration(700);
+        animation->setStartValue(QPoint(start_h_pos , start_w_pos));
         animation->setEndValue(QPoint(horisontal_pos, vertical_pos));
         animation->setEasingCurve(QEasingCurve::InBack);
         animation->start(QAbstractAnimation::DeleteWhenStopped);
 
 
-        window->move(horisontal_pos,vertical_pos);
         if(is_even){
             horisontal_pos += (window->size().width() * move_scaleing);
             is_even = !is_even;
@@ -59,7 +65,4 @@ void Up_theFoo::Move_Target(Dialog *window, Frame *F){
             is_even = !is_even;
             move_scaleing++;
         }
-
-
-          //  Generate_7(F);
 }

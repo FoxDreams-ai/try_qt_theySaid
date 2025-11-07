@@ -20,12 +20,11 @@ public:
     int horisontal_pos = 0;
 private:
     QThread For_windows;
-    Frame *Fra;
+    // Frame *Fra;
 
     Dialog *window;
     bool is_even = 0;
     int move_scaleing=1;
-
     int function_times_action = 7;
     int start_w_pos;
     int start_h_pos;
@@ -33,6 +32,8 @@ protected:
     //<summary> Принимает координаты и перемещает окна последовательно размещая их с правой и левой сторон</summary>
     void Move_Target(Dialog *window , Frame *F);
 
+
+    //Сохранение центра позиции для оследующего применения его для анимации и координации
     void start_pos_init(){
         start_w_pos = vertical_pos;
         start_h_pos = horisontal_pos;

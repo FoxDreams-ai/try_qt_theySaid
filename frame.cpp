@@ -25,8 +25,8 @@ void Frame::on_commandLinkButton_clicked()
 {
     Up_theFoo up;
     up.ScreenGet(this);
-
-        up.Generate_7(this,i);
+    up.Generate_7(this,i);
 }
+
 
 

@@ -12,3 +12,8 @@ Dialog::~Dialog()
 {
     delete ui;
 }
+
+void Dialog::setLineEditText(const QString &text)
+{
+    ui->lineEdit->setText(text);
+}

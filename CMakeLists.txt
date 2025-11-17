@@ -28,6 +28,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         dialog.h dialog.cpp dialog.ui
         up_thefoo.h up_thefoo.cpp
+        dialog_types.cpp
 
 
 

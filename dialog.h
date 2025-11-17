@@ -15,6 +15,8 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+     void setLineEditText(const QString &text);
+
 private:
     Ui::Dialog *ui;
 };

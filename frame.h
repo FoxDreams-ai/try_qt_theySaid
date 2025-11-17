@@ -24,5 +24,6 @@ private slots:
 private:
     Ui::Frame *ui;
 
+
 };
 #endif // FRAME_H

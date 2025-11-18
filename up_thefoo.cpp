@@ -34,8 +34,8 @@ Dialog* Up_theFoo::Generate_7(Frame *F,int i) {
         Start_dialog_widgets(window);
         dialogs.append(window);
             Move_Target(window, F);
+        Frame_update();
 }
-    Frame_update();
     return window;
 }
 
@@ -64,16 +64,17 @@ void Up_theFoo::Move_Target(Dialog *window, Frame *F){
             vertical_pos -= 20;
             is_even = !is_even;
             move_scaleing++;
-        }
+    }
 }
 
 
 
 void Up_theFoo::Frame_update(){
-    for (Dialog* dlg : dialogs) {
+    for (Dialog* const &dlg : dialogs) {
+        qDebug() << "Frame update called!";
+
         if (dlg && dlg->isVisible()) {
-            dlg->setLineEditText("///////////////");
-        dlg->repaint();
+            dlg->setLineEditText("/");
         }
     }
 }

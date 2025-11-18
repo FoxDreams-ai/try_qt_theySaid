@@ -19,6 +19,10 @@ public:
 
 private:
     Ui::Dialog *ui;
+    QString Loading ="";
 };
+
+
+
 
 #endif // DIALOG_H

@@ -68,13 +68,15 @@ void Up_theFoo::Move_Target(Dialog *window, Frame *F){
 }
 
 
-
+//открывает необходимое количество окон.
 void Up_theFoo::Frame_update(){
-    for (Dialog* const &dlg : dialogs) {
-        qDebug() << "Frame update called!";
-
+    for (Dialog* const &dlg : std::as_const(dialogs)) {
         if (dlg && dlg->isVisible()) {
             dlg->setLineEditText("/");
         }
     }
+    // for (int i = 0; i > Dialog_vars.size();i++ )
+    // {
+    //     qInfo() << "Work";
+    // }
 }

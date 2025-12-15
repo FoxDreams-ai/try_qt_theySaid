@@ -6,4 +6,3 @@ struct Dialog_St
 
 };
 
-

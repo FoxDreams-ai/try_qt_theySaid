@@ -22,10 +22,13 @@ void Dialog::setLineEditText(const QString &text)
     connect(timer, &QTimer::timeout, this, [=]() mutable {
 
         if (Loading.size() >= ui->lineEdit->maxLength()) {
+            if(ui->lineEdit->isVisible()){
+                ui->lineEdit->hide();
+            }
             timer->stop();
             timer->deleteLater();
         }
-        else(){
+        else{
 
             Loading.append(text);
             ui->lineEdit->setText(Loading);

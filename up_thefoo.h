@@ -36,6 +36,9 @@ private:
     int start_w_pos;
     int start_h_pos;
 
+    //далее выходят массив выбранных вариантов
+    std::vector<int> Dialog_vars = {} ;
+
 protected:
     //<summary> Принимает координаты и перемещает окна последовательно размещая их с правой и левой сторон</summary>
     void Move_Target(Dialog *window , Frame *F);
@@ -55,9 +58,9 @@ protected:
 private:
     //Functions
 
+    //открывает необходимое количество окон.
+    void extracted();
     void Frame_update();
-
-
 };
 
 #endif // UP_THEFOO_H
